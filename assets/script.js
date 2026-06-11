@@ -58,6 +58,16 @@ const prodotti = [
   },
 ];
 
+// /**
+//  * Renderizza le card dei prodotti nel contenitore e aggiorna il contatore.
+//  * @param {Object[]} lista - Array di prodotti da visualizzare
+//  * @param {number}   lista[].id
+//  * @param {string}   lista[].nome
+//  * @param {number}   lista[].prezzo
+//  * @param {string}   lista[].categoria
+//  * @param {string}   lista[].descrizione
+//  * @param {string}   lista[].img
+//  */
 const renderProdotti = (lista) => {
   const contenitore = document.getElementById("contenitore-prodotti");
   contenitore.replaceChildren();
@@ -126,6 +136,11 @@ document
     document.getElementById("modal-prezzo").textContent = `€${prodotto.prezzo}`;
   });
 
+// /**
+//  * Gestisce il click sui bottoni filtro tramite event delegation.
+//  * Filtra i prodotti per categoria e chiama renderProdotti.
+//  * @listens click
+//  */
 const filtri = document.getElementById("filtri");
 filtri.addEventListener("click", (e) => {
   const bottone = e.target.closest("[data-categoria]");
