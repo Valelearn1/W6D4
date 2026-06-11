@@ -59,26 +59,72 @@ const prodotti = [
 ];
 
 const renderProdotti = (lista) => {
-  const html = lista
-    .map(
-      (p) =>
-        `<article class="col-12 col-sm-6 col-xl-4 mb-3">
-            <div class="card h-100 ${p.categoria}">
-                <img src="${p.img}" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">${p.nome}</h5>
-                    <p class="card-text">${p.descrizione}</p>
-                    <p class="fw-bold">€${p.prezzo}</p>
-                </div>
-            </div>
-        </article>`,
-    )
-    .join("");
+  const contenitore = document.getElementById("contenitore-prodotti");
+  contenitore.replaceChildren();
 
-  document.getElementById("contenitore-prodotti").innerHTML = html;
+  lista.forEach((p) => {
+    const article = document.createElement("article");
+    article.className = "col-12 col-sm-6 col-xl-4 mb-3";
+
+    const card = document.createElement("div");
+    card.className = `card h-100 ${p.categoria}`;
+
+    const img = document.createElement("img");
+    img.src = p.img;
+    img.className = "card-img-top";
+
+    const cardBody = document.createElement("div");
+    cardBody.className = "card-body";
+
+    const titolo = document.createElement("h5");
+    titolo.className = "card-title";
+    titolo.textContent = p.nome;
+
+    const descrizione = document.createElement("p");
+    descrizione.className = "card-text";
+    descrizione.textContent = p.descrizione;
+
+    const prezzo = document.createElement("p");
+    prezzo.className = "fw-bold";
+    prezzo.textContent = `€${p.prezzo}`;
+
+    const btnDettagli = document.createElement("button");
+    btnDettagli.type = "button";
+    btnDettagli.className = "btn btn-primary btn-sm mt-2";
+    btnDettagli.textContent = "Dettagli";
+    btnDettagli.dataset.bsToggle = "modal";
+    btnDettagli.dataset.bsTarget = "#modal-prodotto";
+    btnDettagli.dataset.prodottoId = p.id;
+
+    cardBody.appendChild(titolo);
+    cardBody.appendChild(descrizione);
+    cardBody.appendChild(prezzo);
+    cardBody.appendChild(btnDettagli);
+
+    card.appendChild(img);
+    card.appendChild(cardBody);
+
+    article.appendChild(card);
+    contenitore.appendChild(article);
+  });
+
+  document.getElementById("contatore").textContent = lista.length;
 };
 
 renderProdotti(prodotti);
+
+document
+  .getElementById("modal-prodotto")
+  .addEventListener("show.bs.modal", (e) => {
+    const id = Number(e.relatedTarget.dataset.prodottoId);
+    const prodotto = prodotti.find((p) => p.id === id);
+
+    document.getElementById("modal-titolo").textContent = prodotto.nome;
+    document.getElementById("modal-img").src = prodotto.img;
+    document.getElementById("modal-descrizione").textContent =
+      prodotto.descrizione;
+    document.getElementById("modal-prezzo").textContent = `€${prodotto.prezzo}`;
+  });
 
 const filtri = document.getElementById("filtri");
 filtri.addEventListener("click", (e) => {

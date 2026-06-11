@@ -91,27 +91,24 @@
             <button type="button" class="btn btn-outline-primary me-2 mb-2" data-categoria="abbigliamento">Abbigliamento</button>
             <button type="button" class="btn btn-outline-primary me-2 mb-2" data-categoria="accessori">Accessori</button>
           </div>
-          <div id="contenitore-prodotti" class="row">
-            
-          </div>
+
+          <p class="text-muted mb-2">Mostrati: <span id="contatore">6</span> su 6</p>
+          <div id="contenitore-prodotti" class="row"></div>
         </section>
       </div>
     </main>
 
-    <div class="modal fade" id="prodotto-1" tabindex="-1">
+    <div class="modal fade" id="modal-prodotto" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Sneaker Run</h5>
+            <h5 class="modal-title" id="modal-titolo"></h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
           </div>
           <div class="modal-body">
-            <img src="assets/img/Sneakers-Caven-III-unisex.avif"
-                class="img-fluid mb-3"
-                alt="Immagine scarpe"
-            />
-            <p>Scarpa leggera per la corsa, suola in gomma traspirante.</p>
-            <p class="fw-bold fs-4 m-0">€ 89,90</p>
+            <img id="modal-img" class="img-fluid mb-3" alt="" />
+            <p id="modal-descrizione"></p>
+            <p id="modal-prezzo" class="fw-bold fs-4 m-0"></p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
