@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EpiShop — E-commerce</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/style.css"
+    <link rel="icon" href="assets/img/favicon.jpeg"
+  </head>
+  <body>
+    <header>
+      <!-- Logo a sinistra, link nav a destra. Usa container + d-flex + justify-content-between -->
+      <nav class="navbar navbar-expand-md bg-primary navbar-dark">
+        <div class="container">
+          <a class="navbar-brand fw-bold" href="#">EpiShop</a>
+          <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav-menu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="nav-menu">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link"></a></li>
+              <li class="nav-item"><a class="nav-link"></a></li>
+              <li class="nav-item"><a class="nav-link"></a></li>
+            </ul>
+            <button id="toggle-tema" type="button" class="btn btn-outline-light ms-md-2 mt-2 mt-md-0">Tema scuro</button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section>
+      <!-- Hero: titolo grande, sottotitolo, bottone CTA. Usa container + text-center + classi utility -->
+        <div id="hero" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3500">
+          <div class="carousel-inner">
+            <div class="carousel-item active bg-info text-white text-center py-5">
+              <div class="container">
+                <h2 class="fs-1 fw-bold mb-2">Saldi di primavera</h2>
+                <p class="fs-5 m-0">Fino al 50% di sconto sui prodotti in evidenza</p>
+              </div>
+            </div>
+            <div class="carousel-item  bg-success text-white text-center py-5">
+              <div class="container">
+                <h2 class="fs-1 fw-bold mb-2">Nuova collezione</h2>
+                <p class="fs-5 m-0">Scopri gli arrivi della settimana</p>
+              </div>
+            </div>
+            <div class="carousel-item  bg-dark text-white text-center py-5">
+              <div class="container">
+                <h2 class="fs-1 fw-bold mb-2">Spedizione gratis</h2>
+                <p class="fs-5 m-0">Sopra i 50 € su tutto il sito</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#hero" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#hero" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+    </section>
+
+    <main class="container my-4">
+      <div class="row">
+        <aside class="col-lg-3 d-none d-lg-block">
+          <!-- Sidebar categorie. Visibile solo da lg in su (d-none d-lg-block) -->
+          <div class="bg-light p-3 rounded border">
+            <h3 class="fs-5 fw-bold mb-3">Categorie</h3>
+            <p class="m-0 mb-2">Scarpe</p>
+            <p class="m-0 mb-2">T-shirt</p>
+            <p class="m-0 mb-2">Borse</p>
+            <p class="m-0 mb-2">Accessori</p>
+          </div>
+        </aside>
+
+        <section class="col-12 col-lg-9">
+          <!-- Griglia prodotti responsive (1 / 2 / 3 / 4 per riga in base al breakpoint) -->
+          <h2 class="fs-3 fw-bold mb-4 text-center text-md-start">
+            Prodotti in evidenza
+            <span class="badge bg-danger fs-6">-30%</span>
+          </h2>
+          <div class="row">
+            <article class="col-sm-12 col-md-6 col-xl-4 mb-3">
+              <div class="card h-100 shadow-sm">
+                  <img
+                    src="assets/img/Sneakers-Caven-III-unisex.avif"
+                    class="card-img-top"
+                    alt="Immagine scarpe"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Sneaker Run</h5>
+                    <p class="card-text text-muted">Scarpa leggera per la corsa, suola in gomma traspirante.</p>
+                    <p class="fw-bold fs-5 m-0">€ 89,90</p>
+                  </div>
+                  <div class="card-footer bg-white border-0">
+                    <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#prodotto-1">Dettagli</button>
+                  </div>
+              </div>
+            </article>
+            <article class="col-sm-12 col-md-6 col-xl-4 mb-3">
+              <div class="card h-100 shadow-sm">
+                  <img
+                    src="assets/img/mokcup-tshirt-unijunior-bambino-2.jpg"
+                    class="object-fit-contain img-fluid border rounded w-100 h-100 mb-3"
+                    alt="Immagine maglietta"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">T-shirt Basic</h5>
+                    <p class="card-text text-muted">Cotone biologico, taglio regolare, disponibile in 5 colori.</p>
+                    <p class="fw-bold fs-5 m-0">€ 19,90</p>
+                  </div>
+                  <div class="card-footer bg-white border-0">
+                    <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#prodotto-1">Dettagli</button>
+                  </div>
+              </div>
+            </article>
+            <article class="col-sm-12 col-md-6 col-xl-4 mb-3">
+              <div class="card h-100 shadow-sm">
+                  <img
+                    src="assets/img/borsa-blu.jpeg"
+                    class="object-fit-contain img-fluid border rounded w-100 h-100 mb-3"
+                    alt="Immagine borsa"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Borsa city</h5>
+                    <p class="card-text text-muted">Tessuto resistente, tasca interna, cinghia regolabile.</p>
+                    <p class="fw-bold fs-5 m-0">€ 49,90</p>
+                  </div>
+                  <div class="card-footer bg-white border-0">
+                    <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#prodotto-1">Dettagli</button>
+                  </div>
+              </div>
+            </article>
+          
+        </section>
+      </div>
+    </main>
+
+    <div class="modal fade" id="prodotto-1" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Sneaker Run</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <img src="assets/img/Sneakers-Caven-III-unisex.avif"
+                class="img-fluid mb-3"
+                alt="Immagine scarpe"
+            />
+            <p>Scarpa leggera per la corsa, suola in gomma traspirante.</p>
+            <p class="fw-bold fs-4 m-0">€ 89,90</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+            <button type="button" class="btn btn-success">Aggiungi al carrello</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+      <!-- Footer scuro centrato con copyright -->
+      <div class="container text-center">
+        <p class="m-0">© 2026 EpiShop - Tutti i diritti riservati.</p>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-4 mb-2 mb-md-0 text-center">Azienda</div>
+        <div class="col-12 col-md-4 mb-2 mb-md-0 text-center">Aiuto</div>
+        <div class="col-12 col-md-4 text-center">Social</div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/script.js"></script>
+  </body>
+</html>
