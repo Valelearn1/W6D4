@@ -79,3 +79,20 @@ const renderProdotti = (lista) => {
 };
 
 renderProdotti(prodotti);
+
+const filtri = document.getElementById("filtri");
+filtri.addEventListener("click", (e) => {
+  const bottone = e.target.closest("[data-categoria]");
+  if (!bottone) return;
+
+  filtri.querySelectorAll(".btn").forEach((b) => b.classList.remove("active"));
+
+  bottone.classList.add("active");
+  const categoria = bottone.dataset.categoria;
+  const filtrati =
+    categoria === "tutti"
+      ? prodotti
+      : prodotti.filter((p) => p.categoria === categoria);
+
+  renderProdotti(filtrati);
+});
